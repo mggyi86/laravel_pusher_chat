@@ -37,6 +37,6 @@ class ChatEvent implements ShouldBroadcast
      */
     public function broadcastOn()
     {
-        return new PrivateChannel('laravel-pusher-chat');
+        return new PrivateChannel('chat');
     }
 }
