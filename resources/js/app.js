@@ -76,7 +76,7 @@ const app = new Vue({
       }
     },
     mounted() {
-      Echo.private('laravel-pusher-chat')
+      Echo.channel('private-laravel-pusher-chat')
         .listen('ChatEvent', (e) => {
             this.chat.messages.push(e.message);
             this.chat.color.push('warning');
