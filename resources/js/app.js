@@ -45,7 +45,7 @@ const app = new Vue({
     },
     watch: {
       message: function() {
-        Echo.private('chat')
+        Echo.private('laravel-pusher-chat')
           .whisper('typing', {
             name: this.message
           });
@@ -76,7 +76,7 @@ const app = new Vue({
       }
     },
     mounted() {
-      Echo.private('chat')
+      Echo.private('laravel-pusher-chat')
         .listen('ChatEvent', (e) => {
             this.chat.messages.push(e.message);
             this.chat.color.push('warning');
@@ -90,7 +90,7 @@ const app = new Vue({
             this.typing = '';
           }
         })
-      Echo.join(`chat`)
+      Echo.join(`laravel-pusher-chat`)
         .here((users) => {
             this.numberOfUsers = users.length;
         })
