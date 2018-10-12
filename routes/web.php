@@ -18,6 +18,12 @@ Route::get('chat', 'ChatController@index');
 
 Route::post('send', 'ChatController@send');
 
+Route::post('saveToSession', 'ChatController@saveToSession');
+
+Route::post('getOldMessage', 'ChatController@getOldMessage');
+
+Route::post('deleteSession', 'ChatController@deleteSession');
+
 Auth::routes();
 
 Route::get('/home', 'HomeController@index')->name('home');
